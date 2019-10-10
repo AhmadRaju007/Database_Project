@@ -34,11 +34,31 @@ if(isset($_POST["insert"]))
       <div class="container_nav" style = "width:100%; ; background-color:#EEE8AA;">
       <nav>
         <ul>
-          <li><a href="login.php">Login</a></li>
-          <li><a href="registration.php">Register</a></li>
-          <li><a href="products.php">Products</a></li>
-          <li><a href="career.php">Career</a></li>
-          
+         <li class="item" id="profile">
+          <a href="#profile" class="btn"><i class="far fa-user"></i>Profile</a>
+          <div class="smenu">
+            <a href="#">Posts</a>
+            <a href="#">Pictures</a>
+          </div>
+         </li>
+          <li class="item" id="messages">
+          <a href="#messages" class="btn"><i class="far fa-envelope-open"></i>Messages</a>
+          <div class="smenu">
+            <a href="#">New</a>
+            <a href="#">Sent</a>
+            <a href="#">Spam</a>
+          </div>
+        </li>
+        <li class="item" id="settings">
+          <a href="#settings" class="btn"><i class="fas fa-cog"></i>Settings</a>
+          <div class="smenu">
+            <a href="#">Password</a>
+            <a href="#">Language</a>
+          </div>
+        </li>
+         <li class="item">
+          <a class="btn" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </li>
         </ul>
       </nav>
     </div>
