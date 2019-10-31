@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$con = mysqli_connect('127.0.0.1:3308', 'root', '');
+$con = mysqli_connect('127.0.0.1:3306', 'root', '');
 if (!$con) 
 {
     die('Could not connect: ' . mysqli_error());
@@ -48,7 +48,7 @@ if(isset($_POST) && !empty($_POST))
   <body>
     <h2>Registration FORM</h2>
     <div class="imgcontainer">
-      <img src="images\image_reg.png" alt="Avatar" class="avatar" height=200>
+      <img src="images\image_reg.png" alt="Avatar" class="avatar" height=300>
     </div>
     <form action="registration.php" method="post">
       <div class="container">

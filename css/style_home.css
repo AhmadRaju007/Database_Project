@@ -2,15 +2,7 @@
 body {background-color: #D7F1FB; color:  black ; font-family: Arial, Helvetica, sans-serif;}
 form {border: 2px solid   #283747 ;}
 
-input[type=text], input[type=password] {
-  background-color: #d6eaf8;
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+
 
 button {
   background-color: #4CAF50;
@@ -68,7 +60,7 @@ span.psw {
   }
   .cancelbtn {
     text-align: center; 
-     width: 100%;
+     width: 80%;
 
   }
 }
