@@ -66,7 +66,8 @@ if(isset($_POST["insert"]))
             <li class="item" id="settings">
               <a href="#settings" class="btn"><i class="fas fa-cog"></i>Settings</a>
               <div class="smenu">
-                <a href="#">Password</a>
+                <a href="#" onclick="showUserInfo()">Password</a>
+
                 <a href="#">Language</a>
               </div>
             </li>
@@ -78,18 +79,19 @@ if(isset($_POST["insert"]))
         </div>
       </header>
       
-    	<br/><br/>
-      
-      	<div class="container" style = "width:90%; margin: 8px 5%; background-color: #154360; color:#f7dc6f  ;">
-      		<form method="post" enctype="multipart/form-data">
-      			<h3 align="center"> Insert and Display image</h3>
-      			<input type="file" name="image" id="image" align="center"> <br/>
-      			 <input type="submit" name="insert" id="insert" value="Insert" class="btn-btn-info"/>
-      		</form>
-      	</div>
-      
-      	<br/>
-      	<br/>
+        <br/>
+        <br/>
+
+        <div class="container" style = "width:90%; margin: 8px 5%; background-color: #154360; color:#f7dc6f  ;">
+            <form method="post" enctype="multipart/form-data">
+                <h3 align="center"> Insert and Display image</h3>
+                <input type="file" name="image" id="image" align="center"> <br/>
+                 <input type="submit" name="insert" id="insert" value="Insert" class="btn-btn-info"/>
+            </form>
+        </div>
+
+        <br/>
+        <br/>
         <section>
           <div class="form-group custom-input-space has-feedback"  style="color: #006400">
             <div class="page-heading">
@@ -100,20 +102,21 @@ if(isset($_POST["insert"]))
                 <div class="col-md-offset-2 col-md-8">
                   <div class="panel panel-default">
                     <div class="panel-heading">Post Details List: </div>
-                    <table id="post_list" width="100%"   style="color: #804000  ;padding-left: 20px; ">
-                      <thead>
-                        <tr class="success">
-                          <th> Status </th>
-                          <th> No.</th>
-                          <th> Username </th>
-                          <th> Password </th>
-                        </tr>
+                    <table  id="post_list" width="100%"   style="color: #804000  ;padding-left: 20px; ">
+
+                      <thead style="color: midnightblue;">
+                        <th ><div class= "col-xs-4 col-md-3"> ACTION </div></th>
+                        <th><div class= "col-xs-3 col-md-3 ">USER ID</div></th>
+                        <th><div class= "col-xs-3 col-md-2 "> USER NAME</div></th>
+                        <th> <div class= "col-xs-2 col-md-2 ">PASSWORD</div></th>
+                        <th> <div class= "col-xs-2 col-md-2 ">ACTIVE STATUS</div></th>
                       </thead>
+
                     </table>
                   </div>
                 </div>
               </div>
-              
+
             </div>
 
           </div>
@@ -136,23 +139,123 @@ if(isset($_POST["insert"]))
       })
     </script>
 
+    <script >
+    /*  function ShowUserInfo(){
+        var html = '<table class="table table-bordered showdeliveryreportstable" id = "datatable">' +
+                       
+                        '</table>';
+                    $('.deliveryreportssection').html(html);
+        var dataSet = {};
+        var columns = [{
+            "title": 'Id',
+            "data": "Id"
+        },
+        {
+            "title": 'Username',
+            "data": "Username"
+        },
+        {
+            "title": 'Password',
+            "data": "Password"
+        },
+        ,
+        {
+            "title": 'Action',
+            "data": "Action"
+        }
+    ];
+    
+    var table_name = ".showdeliveryreportstable";
+    }*/
+  $(document).ready(function(){
+     var columns = [
+      /*  {
+            "title": 'Action',
+            "class": "text_center",
+            "data": "areaoragent"
+        },
+       {
+            "title": 'Id',
+            "class": "text_center",
+            "data": "array[0]"
+        },
+        {
+            "title": 'Username',
+            "class": "text_center",
+            "data": "array[1]"
+        },
+        {
+            "title": 'Password',
+            "class": "text_center",
+            "data": "array[2]"
+        },*/
+      ];
+    $('#post_list').dataTable({
+        //"destroy": true,
+        "bprocessing": true,
+        "serverSide": true,
+        "scrollX": true,
+        "paging": true,
+        "info": false,
+        "scrollCollapse": true,
+        "lengthMenu": [
+            [20, 25, 50, 100, 150, 200, 500, 1000],
+            [20, 25, 50, 100, 150, 200, 500, 1000]
+        ],
+        //"columns": columns,
+      /*  "order": [
+            [1, "desc"]
+        ], */
+        "bFilter": false,
+        "columnDefs": [{
+          "targets": [0,2,3],"orderable": true,},
+          //{"targets": [1,2,3],"searchable": false},
+        ],
+        dom: 'Blfrtip',
+        buttons:[
+            'csv','excel', 'print'
+        ],
+         "ajax": {
+            url: "post_list.php",
+            type: "POST",
+
+        },
+    });
+  });
+    </script>
+
+   
+
     <script>
+        function Helloclick(val){
+          console.log(val)
+        alert('id')
+      }
+
     $(document).ready(function(){
-      $('#post_list').dataTable({
+
+    
+
+      $('#debashish_vai_post_list').adataTable({
+
 
         "bProcessing":true,
         "serverSide": true,
-        "order": [
-                    [1, "desc"]
-                ],
-                "columnDefs": [{
-                    "targets": [0, 2],
-                    "orderable": false
-                }],
+
+        "order":  [[1, "desc"]],
+            "columnDefs": [ {
+            "targets": -1,
+            "data": null,
+            "defaultContent": '<button onclick="Helloclick("'+id+'"); return false;">Click!</button>'
+        }],
         "ajax":{
           url :"post_list.php",
           type : "POST",
-        }
+        },
+        "createdRow": function(row, data, dataIndex) {
+            console.log(row['id'])
+        },
+        
       });
 
     });
@@ -161,26 +264,5 @@ if(isset($_POST["insert"]))
 
 </html>
 
-<script>  
- $(document).ready(function(){  
-      $('#insert').click(function(){  
-           var image_name = $('#image').val();  
-           if(image_name == '')  
-           {  
-                alert("Please Select Image");  
-                return false;  
-           }  
-           else  
-           {  
-                var extension = $('#image').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
-                {  
-                     alert('Invalid Image File');  
-                     $('#image').val('');  
-                     return false;  
-                }  
-           }  
-      });  
- });  
- </script> 
+
 

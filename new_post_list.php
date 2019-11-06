@@ -31,18 +31,16 @@
 		array( 'db' => 'id', 'dt' => 1),
 		array( 'db' => 'username', 'dt' => 2),
 		array( 'db' => 'password', 'dt' => 3),
-		array( 'db' => 'is_active', 'dt' => 4),
 		array('db' => 'id', 'dt' => 0,
         'formatter' => function ($d, $row) {
-
             $is_active = '';
             $is_active_text = '';
-            if(($row['is_active'] ==  1)){
+            if(($row['id'] ==  '101')){
                 $is_active = 0;
-                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn1">Make Active</button></a><a   href="showUser.php?id='.$d.'"><button class="bttn bttn3">Edit</button></a>';
+                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn1">Make Active</button></a><a  href="javascript:void(0);"><button class="bttn bttn3">Edit</button></a>';
             } else {
                 $is_active = 1;
-                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn2">Make Inactive</button></a><a  href="showUser.php?id='.$d.'";><button class="bttn bttn3">Edit</button></a>';
+                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn2">Make Inactive</button></a><a  href="javascript:void(0);"><button class="bttn bttn3">Edit</button></a>';
             }
 
             return $is_active_text;

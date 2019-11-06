@@ -9,7 +9,7 @@ if (!$con) {
 
 if(isset($_SESSION['not']))
 {
-  echo "You are not logged in!";
+  //echo "You are not logged in!";
    $_SESSION['not']=0;
 }
 
@@ -31,7 +31,7 @@ if(isset($_POST) && !empty($_POST))
   } 
   else
   {
-
+$_SESSION['status']=
     header('location:login.php');
     echo "Login failed!";
   }
