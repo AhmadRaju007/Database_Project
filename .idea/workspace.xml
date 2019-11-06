@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4304bbf-85d4-4038-980b-9ca650db3c57" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/style_manager_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style_manager_index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/manager_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/post_list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ecourierpanel/static/db/configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ecourierpanel/static/db/configuration.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,7 +125,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="657" />
     <option name="height" value="735" />
@@ -187,6 +183,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -223,12 +220,12 @@
       <workItem from="1572928029981" duration="5102000" />
       <workItem from="1572954435679" duration="2824000" />
       <workItem from="1573014785472" duration="1061000" />
-      <workItem from="1573015848785" duration="2132000" />
+      <workItem from="1573015848785" duration="2411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13568000" />
+    <option name="totallyTimeSpent" value="13847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
