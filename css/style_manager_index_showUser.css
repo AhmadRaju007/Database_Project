@@ -41,15 +41,27 @@ button:hover {
 }
 
 table {
-  width:100%;
+  margin: 20px;
+  width:50%;
+  align: center;
 }
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-th, td {
+th {
   padding: 15px;
-  text-align: left;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+td
+{
+  padding: 15px;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 table#t01 tr:nth-child(even) {
   background-color: #eee;
@@ -92,10 +104,13 @@ table#t01 th {
   clear:both;
 }
 
+
+
 ul {
+
   padding: 0px;
   margin: 0px;
-  display: flex;
+
 }
 
 ul li{
@@ -109,6 +124,15 @@ ul li{
 }
 
 
+.nav {
+  display: flex;
+}
+
+.user{
+  height: 50px;
+  width: 50%;
+
+}
 
 .center {
   text-align: center;

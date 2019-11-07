@@ -47,7 +47,7 @@ if(isset($_POST["insert"]))
       <header>
         <div class="container_nav" style = "width:100%; ">
           <nav>
-            <ul>
+            <ul >
              <li class="item" id="profile">
               <a href="#profile" class="btn"><i class="far fa-user"></i>Profile</a>
               <div class="smenu">

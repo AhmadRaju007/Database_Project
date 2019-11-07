@@ -56,7 +56,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
     <link rel="stylesheet" href= "css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href= "css/style_manager_index_showUser.css">
+    <link rel="stylesheet" href= "css/style_manager_index.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
@@ -112,7 +112,8 @@
                 <div class="row">
                     <div class="col-md-offset-2 col-md-8">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Post Details List: </div>
+                            <div class="panel-heading">Post Details List: <br/><br/></div>
+
 
                                 <form method="post" class="form-horizontal" enctype="multipart/form-data" action="";return false;"
                                       id="admin_form">

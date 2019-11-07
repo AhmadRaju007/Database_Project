@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4304bbf-85d4-4038-980b-9ca650db3c57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/addUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userFormData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style_manager_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style_manager_index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style_manager_index_showUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style_manager_index_showUser.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/manager_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/post_list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/showUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/showUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/userForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ecourierpanel/static/db/configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ecourierpanel/static/db/configuration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ecourierpanel/static/db/htmlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ecourierpanel/static/db/htmlGenerator.php" afterDir="false" />
     </list>
@@ -26,37 +24,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager_index.php">
+        <entry file="file://$PROJECT_DIR$/showUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+            <state relative-caret-position="424">
+              <caret line="109" column="358" selection-start-line="109" selection-start-column="358" selection-end-line="109" selection-end-column="358" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/userForm.php">
+        <entry file="file://$PROJECT_DIR$/css/style_manager_index_showUser.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="218" column="8" lean-forward="true" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
+            <state relative-caret-position="17">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style_manager_index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="86" column="1" lean-forward="true" selection-start-line="72" selection-end-line="86" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/addUser.php">
+        <entry file="file://$PROJECT_DIR$/userForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="169">
+              <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../ecourierpanel/back-office/js/selfcare.js">
+        <entry file="file://$PROJECT_DIR$/addUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410907">
-              <caret line="24171" column="49" selection-start-line="24171" selection-start-column="49" selection-end-line="24171" selection-end-column="49" />
+            <state relative-caret-position="2006">
+              <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -121,6 +131,8 @@
       <find>_save</find>
       <find>editAdminSubmit</find>
       <find>admin_form</find>
+      <find>nav</find>
+      <find>item</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,17 +142,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/userdetails.php" />
-        <option value="$PROJECT_DIR$/css/style_manager_index_showUser.css" />
         <option value="$PROJECT_DIR$/ssp.class.php" />
         <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/showUser.php" />
         <option value="$PROJECT_DIR$/../ecourierpanel/back-office/js/userFormData.php" />
         <option value="$PROJECT_DIR$/../ecourierpanel/static/db/htmlGenerator.php" />
-        <option value="$PROJECT_DIR$/userForm.php" />
         <option value="$PROJECT_DIR$/post_list.php" />
-        <option value="$PROJECT_DIR$/css/style_manager_index.css" />
-        <option value="$PROJECT_DIR$/manager_index.php" />
         <option value="$PROJECT_DIR$/addUser.php" />
+        <option value="$PROJECT_DIR$/manager_index.php" />
+        <option value="$PROJECT_DIR$/css/style_manager_index.css" />
+        <option value="$PROJECT_DIR$/showUser.php" />
+        <option value="$PROJECT_DIR$/css/style_manager_index_showUser.css" />
+        <option value="$PROJECT_DIR$/userForm.php" />
       </list>
     </option>
   </component>
@@ -162,6 +174,11 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -244,18 +261,19 @@
       <workItem from="1573027134255" duration="8375000" />
       <workItem from="1573041809090" duration="3986000" />
       <workItem from="1573100944842" duration="8560000" />
-      <workItem from="1573115816999" duration="741000" />
+      <workItem from="1573115816999" duration="5071000" />
+      <workItem from="1573128016554" duration="2395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40663000" />
+    <option name="totallyTimeSpent" value="47388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18003026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -280,13 +298,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/style_manager_index_showUser.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ssp.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -324,31 +335,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style_manager_index.css">
+    <entry file="file://$PROJECT_DIR$/../ecourierpanel/back-office/js/selfcare.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="225" column="22" selection-start-line="225" selection-start-column="22" selection-end-line="225" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+        <state relative-caret-position="410907">
+          <caret line="24171" column="49" selection-start-line="24171" selection-start-column="49" selection-end-line="24171" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manager_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+        <state relative-caret-position="833">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ecourierpanel/back-office/js/selfcare.js">
+    <entry file="file://$PROJECT_DIR$/addUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410907">
-          <caret line="24171" column="49" selection-start-line="24171" selection-start-column="49" selection-end-line="24171" selection-end-column="49" />
+        <state relative-caret-position="2006">
+          <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -387,17 +391,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userForm.php">
+    <entry file="file://$PROJECT_DIR$/showUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="218" column="8" lean-forward="true" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
+        <state relative-caret-position="424">
+          <caret line="109" column="358" selection-start-line="109" selection-start-column="358" selection-end-line="109" selection-end-column="358" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addUser.php">
+    <entry file="file://$PROJECT_DIR$/css/style_manager_index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="482">
+          <caret line="86" column="1" lean-forward="true" selection-start-line="72" selection-end-line="86" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style_manager_index_showUser.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
         </state>
       </provider>
     </entry>

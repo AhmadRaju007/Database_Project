@@ -37,7 +37,7 @@ if(!isset($_SESSION['username']))
             <header>
                 <div class="container_nav" style = "width:100%; ">
                     <nav>
-                        <ul>
+                        <ul class="nav">
                             <li class="item" id="profile">
                                 <a href="#profile" class="btn"><i class="far fa-user"></i>Profile</a>
                                 <div class="smenu">
@@ -79,48 +79,44 @@ if(!isset($_SESSION['username']))
                             <div class="col-md-offset-2 col-md-8">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Post Details List: </div>
-                                    <table id="t01" width="100%" >
-
-                                        <thead>
-
-                                        <th><div class= "col-xs-3 col-md-3 "> Id</div></th>
-                                        <th><div class= "col-xs-3 col-md-2 "> Username</div></th>
-                                        <th> <div class= "col-xs-2 col-md-2 ">Password</div></th>
-                                        <th> <div class= "col-xs-2 col-md-2 ">Active Status</div></th>
-                                        </thead>
-                                        <?php
+                                    <div align="center" >
+                                        <ul class="user"   width="100%" style="list-style-type: none; color: white; " >
 
 
-                                        $con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
+                                            <?php
 
-                                        if(!isset($_SESSION['username']))
-                                        {
 
-                                            //  $_SESSION['not']=1;
-                                            echo "User id not found";
-                                            header('location:login.php');
+                                            $con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
 
-                                        }
-                                        if(!isset($_GET['id'])){
-                                            header( "Location: showUser.php");
-                                            exit();
-                                        }
+                                            if(!isset($_SESSION['username']))
+                                            {
 
-                                        $id = $_GET['id'];
-                                        $sql = "SELECT id, username, password, is_active FROM user WHERE id=$id";
-                                        $result = $con-> query($sql);
-                                        if($result->num_rows >0 )
-                                        {
-                                            while( $row= $result -> fetch_assoc()){
-                                                echo "<tr><td>".$row["id"]."</td><td>".$row["username"]."</td><td>".$row["password"]."</td><td>".$row["is_active"]."</td></tr>";
+                                                //  $_SESSION['not']=1;
+                                                echo "User id not found";
+                                                header('location:login.php');
+
+                                            }
+                                            if(!isset($_GET['id'])){
+                                                header( "Location: showUser.php");
+                                                exit();
                                             }
 
-                                        }
-                                        else{
-                                            echo "0 result";
-                                        }
-                                        ?>
-                                    </table>
+                                            $id = $_GET['id'];
+                                            $sql = "SELECT id, username, password, is_active FROM user WHERE id=$id";
+                                            $result = $con-> query($sql);
+                                            if($result->num_rows >0 )
+                                            {
+                                                while( $row= $result -> fetch_assoc()){
+                                                    echo "<table><tr><th> Id </th></tr><tr><td>".$row['id']."</td></tr></table></li><li><table><tr><th> Username </th></tr><tr><td>".$row['username']." </td></tr></table></li><li><table><tr><th> Password </th></tr><tr><td>".$row['password']." </td></tr></table></li><li><table><tr><th> Active Status </th></tr><td>".$row['is_active']."</td></table></li>";
+                                                }
+
+                                            }
+                                            else{
+                                                echo "0 result";
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
