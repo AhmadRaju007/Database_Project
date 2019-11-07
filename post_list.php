@@ -9,7 +9,7 @@
 
 	if(isset($_SESSION['not']))
 	{
-	  echo "You are not logged in!";
+	 // echo "You are not logged in!";
 	   $_SESSION['not']=0;
 	}
 
@@ -38,11 +38,11 @@
             $is_active = '';
             $is_active_text = '';
             if(($row['is_active'] ==  1)){
-                $is_active = 0;
-                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn1">Make Active</button></a><a   href="showUser.php?id='.$d.'"><button class="bttn bttn3">Edit</button></a>';
+               //$is_active = 0;
+                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn1">Make Active</button></a><a  href="showUser.php?id='.$d.'";><button class="bttn bttn2">User Info</button></a><a   href="userForm.php?id='.$d.'"><button class="bttn bttn3">Edit</button></a>';
             } else {
-                $is_active = 1;
-                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn2">Make Inactive</button></a><a  href="showUser.php?id='.$d.'";><button class="bttn bttn3">Edit</button></a>';
+               // $is_active = 1;
+                $is_active_text = '<a  href="javascript:void(0);"><button class="bttn bttn1">Make Inactive</button></a><a  href="showUser.php?id='.$d.'";><button class="bttn bttn2">User Info</button></a><a  href="userForm.php?id='.$d.'";><button class="bttn bttn3">Edit</button></a>';
             }
 
             return $is_active_text;

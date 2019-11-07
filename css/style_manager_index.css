@@ -171,7 +171,7 @@ ul li{
 }
 
 .bttn {
-  background-color: #4CAF50; /* Green */
+   /* Green */
   border: none;
   color: white;
   padding: 16px 32px;
@@ -219,4 +219,21 @@ ul li{
 .bttn3:hover {
   background-color: white;
   color: black;
+}
+
+.bttn_center
+{
+  border-radius: 25px;
+  background-color: orange;
+  align: center;
+  color: black;
+  border: 2px solid #008CBA;
+  width: 200px;
+
+}
+
+.bttn_center:hover {
+  background-color: white;
+  color: black;
+
 }

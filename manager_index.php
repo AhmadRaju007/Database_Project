@@ -99,17 +99,18 @@ if(isset($_POST["insert"]))
             </div>
             <div class="page-body clearfix">
               <div class="row">
-                <div class="col-md-offset-2 col-md-8">
+                <div class="col-md-offset-4 col-md-8">
                   <div class="panel panel-default">
                     <div class="panel-heading">Post Details List: </div>
+                      <a  href="addUser.php";><button class="bttn bttn_center">Add User</button></a>
                     <table  id="post_list" width="100%"   style="color: #804000  ;padding-left: 20px; ">
 
                       <thead style="color: midnightblue;">
-                        <th ><div class= "col-xs-4 col-md-3"> ACTION </div></th>
-                        <th><div class= "col-xs-3 col-md-3 ">USER ID</div></th>
-                        <th><div class= "col-xs-3 col-md-2 "> USER NAME</div></th>
-                        <th> <div class= "col-xs-2 col-md-2 ">PASSWORD</div></th>
-                        <th> <div class= "col-xs-2 col-md-2 ">ACTIVE STATUS</div></th>
+                        <th > ACTION </th>
+                        <th>USER ID</th>
+                        <th> USER NAME</th>
+                        <th> PASSWORD</th>
+                        <th> ACTIVE STATUS</th>
                       </thead>
 
                     </table>
@@ -226,40 +227,7 @@ if(isset($_POST["insert"]))
 
    
 
-    <script>
-        function Helloclick(val){
-          console.log(val)
-        alert('id')
-      }
 
-    $(document).ready(function(){
-
-    
-
-      $('#debashish_vai_post_list').adataTable({
-
-
-        "bProcessing":true,
-        "serverSide": true,
-
-        "order":  [[1, "desc"]],
-            "columnDefs": [ {
-            "targets": -1,
-            "data": null,
-            "defaultContent": '<button onclick="Helloclick("'+id+'"); return false;">Click!</button>'
-        }],
-        "ajax":{
-          url :"post_list.php",
-          type : "POST",
-        },
-        "createdRow": function(row, data, dataIndex) {
-            console.log(row['id'])
-        },
-        
-      });
-
-    });
-    </script>
  </body>
 
 </html>
