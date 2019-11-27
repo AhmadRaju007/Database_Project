@@ -27,7 +27,7 @@ if(isset($_POST) && !empty($_POST))
 
   if($num==1)
   {
-    header('location:manager_index.php'); 
+    header('location:old_manager_index.php');
   } 
   else
   {

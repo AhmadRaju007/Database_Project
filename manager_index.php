@@ -101,19 +101,24 @@ if(isset($_POST["insert"]))
 	                   		<tbody>
 	                   			<?php
 	                   				$con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
-
-	                   				$sql= "SELECT bill_no, c_date, p_name, p_id, m_units, g_units, unit_price, total_price, due_amount FROM bill_info";// where c_date= cast(CURRENT_TIMESTAMP as date)";
-	                   				//$sql = "Select * from bill_info";
+                                    $cDate = date("Y-m-d");
+                                    echo $cDate;
+                                    //$p= "SELECT "
+	                   				$sql= "SELECT bill_no, c_date, p_name, p_id, m_units, g_units, unit_price, total_price, due_amount FROM bill_info where c_date = $cDate";// date(\"Y-m-d\")";
+	                   				//$sql = "Select date(c_date) from bill_info";
 	                   				$reslt = mysqli_query ($con,$sql);
-
-	                   				while ($row = mysqli_fetch_array ($reslt)) {
-			                   					if (!$row) {
-												    printf("Error: %s\n", mysqli_error($con));
-												    exit();
-												}
-	                   						echo "<tr> <td> ". $row["bill_no"]. "</td> <td> ". $row["c_date"]."</td> <td> ". $row["p_name"]."</td> <td> ". $row["p_id"]."</td> <td> ". $row["m_units"]."</td> <td> ". $row["g_units"]."</td> <td> ". $row["unit_price"]."</td> <td> ". $row["total_price"]."</td> <td> ". $row["due_amount"]."</td></tr>" ;
-	                   				}
-	                   				
+                                    if(isset ($reslt)) {
+                                        while ($row = mysqli_fetch_array($reslt)) {
+                                            if (!$row) {
+                                                printf("Error: %s\n", mysqli_error($con));
+                                                exit();
+                                            }
+                                            //echo "<tr><td>". $row["c_date"]."</td></tr>";
+                                           echo "<tr> <td> " . $row["bill_no"] . "</td> <td> " . $row["c_date"] . "</td> <td> " . $row["p_name"] . "</td> <td> " . $row["p_id"] . "</td> <td> " . $row["m_units"] . "</td> <td> " . $row["g_units"] . "</td> <td> " . $row["unit_price"] . "</td> <td> " . $row["total_price"] . "</td> <td> " . $row["due_amount"] . "</td></tr>";
+                                        }
+                                    }
+                                    else
+                                        echo "<tr>No Results found!</tr>";
 
 	                   				$con -> close();
 	                   			?>
