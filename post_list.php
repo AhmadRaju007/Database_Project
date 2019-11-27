@@ -32,6 +32,7 @@
 		array( 'db' => 'username', 'dt' => 2),
 		array( 'db' => 'password', 'dt' => 3),
 		array( 'db' => 'is_active', 'dt' => 4),
+        array( 'db' => 'created_at', 'dt' => 5),
 		array('db' => 'id', 'dt' => 0,
         'formatter' => function ($d, $row) {
 

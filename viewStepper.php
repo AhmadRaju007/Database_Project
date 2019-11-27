@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<div class="container">
+    <div class="container">
 
         <br />
         <form action="#" id="myForm" role="form" data-toggle="validator" method="post" accept-charset="utf-8">
@@ -75,7 +75,7 @@
         </form>
 
     </div>
-</div>
+
 
 <!-- Include jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

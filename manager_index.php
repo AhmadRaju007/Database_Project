@@ -102,9 +102,9 @@ if(isset($_POST["insert"]))
 	                   			<?php
 	                   				$con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
                                     $cDate = date("Y-m-d");
-                                    echo $cDate;
+                                   // echo $cDate;
                                     //$p= "SELECT "
-	                   				$sql= "SELECT bill_no, c_date, p_name, p_id, m_units, g_units, unit_price, total_price, due_amount FROM bill_info where c_date = $cDate";// date(\"Y-m-d\")";
+	                   				$sql= "SELECT bill_no, c_date, p_name, p_id, m_units, g_units, unit_price, total_price, due_amount FROM bill_info where c_date LIKE '$cDate%'";// date(\"Y-m-d\")";
 	                   				//$sql = "Select date(c_date) from bill_info";
 	                   				$reslt = mysqli_query ($con,$sql);
                                     if(isset ($reslt)) {

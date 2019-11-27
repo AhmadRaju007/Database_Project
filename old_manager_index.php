@@ -100,6 +100,7 @@ if(isset($_POST["insert"]))
                         <th> USER NAME</th>
                         <th> PASSWORD</th>
                         <th> ACTIVE STATUS</th>
+                        <th> DATE</th>
                       </thead>
 
                     </table>
@@ -198,7 +199,7 @@ if(isset($_POST["insert"]))
         ], */
         "bFilter": false,
         "columnDefs": [{
-          "targets": [0,2,3],"orderable": true,},
+          "targets": [0,2,3,4],"orderable": true,},
           //{"targets": [1,2,3],"searchable": false},
         ],
         dom: 'Blfrtip',
