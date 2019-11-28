@@ -17,19 +17,41 @@ if(!empty($_POST)) {
     $con = mysqli_connect('127.0.0.1:3306', 'root', '', 'login');
     // echo "$uid";
     echo "This section worked!";
-    $Uname = $_POST['username'];
-    $Pass = $_POST['password'];
-    if($_POST['id_is_active']== false) {
-        $Active = 0;
-    }
+    $cId = $_POST['customerid'];
+    $cName = $_POST['customername'];
 
-    else {
-        $Active = 1;
-    }
+    $bmNo = $_POST['bm_piece'];
+    $bmMeter = $_POST['bm_meter'];
+    $bmGauge = $_POST['bm_gauge'];
+    $bmPrice = $_POST['bm_price'];
+    $bmTotalPrice = $_POST['bm_total_price'];
 
-    echo $Uname;
-    echo $Pass;
-    echo $Active;
+    $lxNo = $_POST['lx_piece'];
+    $lxMeter = $_POST['lx_meter'];
+    $lxGauge = $_POST['lx_gauge'];
+    $lxPrice = $_POST['lx_price'];
+    $lxTotalPrice = $_POST['lx_total_price'];
+
+    $diamondNo = $_POST['diamond_piece'];
+    $diamondMeter = $_POST['diamond_meter'];
+    $diamondGauge = $_POST['diamond_gauge'];
+    $diamondPrice = $_POST['diamond_price'];
+    $diamondTotalPrice = $_POST['diamond_total_price'];
+
+    $cherryNo = $_POST['cherry_piece'];
+    $cherryMeter = $_POST['cherry_meter'];
+    $cherryGauge = $_POST['cherry_gauge'];
+    $cherryPrice = $_POST['cherry_price'];
+    $cherryTotalPrice = $_POST['cherry_total_price'];
+
+    $jorjetNo = $_POST['jorjet_piece'];
+    $jorjetMeter = $_POST['jorjet_meter'];
+    $jorjetGauge = $_POST['jorjet_gauge'];
+    $jorjetPrice = $_POST['jorjet_price'];
+    $jorjetTotalPrice = $_POST['jorjet_total_price'];
+//    echo $Uname;
+  //  echo $Pass;
+//    echo $Active;
     $sql = "INSERT INTO user(username,password,is_active) VALUES  ('$Uname','$Pass','$Active')";
     $q = mysqli_query($con,$sql);
 
@@ -150,24 +172,24 @@ if(!empty($_POST)) {
 
                                                                 <li>
 
-                                                                    <input class="form-control" maxlength="255" name="bmpiece" placeholder="নাম্বার" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_piece" placeholder="নাম্বার" type="text" />
                                                                     <label for="bm_meter" ><b> টি </b></label>
                                                                 </li>
                                                                 <li>
-                                                                    <label for="bm_meter" class="required"><b>মিটার</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bmmeter" placeholder="মিটার" type="text" />
+                                                                    <label for="bm_meter" ><b>মিটার</b></label>
+                                                                    <input class="form-control" maxlength="255" name="bm_meter" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bmgauge" placeholder="গজ" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_gauge" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_price" ><b>দর</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bmprice" placeholder="দর" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_price" placeholder="দর" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bm_total_price" placeholder="টাকা" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_total_price" placeholder="0" type="text" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -181,24 +203,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                  <input class="form-control" maxlength="255" name="lxpiece" placeholder="নাম্বার" type="text" />
+                                                                  <input class="form-control" maxlength="255" name="lx_piece" placeholder="নাম্বার" type="text" />
                                                                     <label for="lx_meter" ><b> টি </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control" name="lxmeter" placeholder="মিটার" type="text" />
+                                                                    <input class="form-control" name="lx_meter" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control" name="lxgauge" placeholder="গজ" type="text" />
+                                                                    <input class="form-control" name="lx_gauge" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_price" ><b>দর</b></label>
-                                                                    <input class="form-control" name="lxprice" placeholder="দর" type="text"/>
+                                                                    <input class="form-control" name="lx_price" placeholder="দর" type="text"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="lx_total_price" placeholder="টাকা" type="text" />
+                                                                    <input class="form-control" name="lx_total_price" placeholder="0" type="text" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -211,24 +233,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                    <input class="form-control" maxlength="255" name="diamondpiece" placeholder="নাম্বার" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="diamond_piece" placeholder="নাম্বার" type="text" />
                                                                     <label for="diamond_meter" ><b> টি </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control"  name="diamondmeter" placeholder="মিটার" type="text" />
+                                                                    <input class="form-control"  name="diamond_meter" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control"  name="diamondgauge" placeholder="গজ" type="text" />
+                                                                    <input class="form-control"  name="diamond_gauge" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_price" ><b>দর</b></label>
-                                                                    <input class="form-control"  name="diamondprice" placeholder="দর" type="text"/>
+                                                                    <input class="form-control"  name="diamond_price" placeholder="দর" type="text"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="diamond_total_price" placeholder="টাকা" type="text" />
+                                                                    <input class="form-control" name="diamond_total_price" placeholder="0" type="text" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -241,24 +263,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                    <input class="form-control" maxlength="255" name="cherrypiece" placeholder="নাম্বার" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="cherry_piece" placeholder="নাম্বার" type="text" />
                                                                     <label for="cherry_meter" ><b> টি </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control"  name="cherrymeter" placeholder="মিটার" type="text" />
+                                                                    <input class="form-control"  name="cherry_meter" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control"  name="cherrygauge" placeholder="গজ" type="text" />
+                                                                    <input class="form-control"  name="cherry_gauge" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_price" ><b>দর</b></label>
-                                                                    <input class="form-control"  name="cherryprice" placeholder="দর" type="text"/>
+                                                                    <input class="form-control"  name="cherry_price" placeholder="দর" type="text"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="cherry_total_price" placeholder="টাকা" type="text" />
+                                                                    <input class="form-control" name="cherry_total_price" placeholder="0" type="text" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -271,24 +293,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                    <input class="form-control" maxlength="255" name="jorjetpiece" placeholder="নাম্বার" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="jorjet_piece" placeholder="নাম্বার" type="text" />
                                                                     <label for="jorjet_meter" ><b> টি </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control"  name="jorjetmeter" placeholder="মিটার" type="text" />
+                                                                    <input class="form-control"  name="jorjet_meter" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control"  name="jorjetgauge" placeholder="গজ" type="text" />
+                                                                    <input class="form-control"  name="jorjet_gauge" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_price" ><b>দর</b></label>
-                                                                    <input class="form-control"  name="jorjetprice" placeholder="দর" type="text"/>
+                                                                    <input class="form-control"  name="jorjet_price" placeholder="দর" type="text"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="jorjet_total_price" placeholder="টাকা" type="text" />
+                                                                    <input class="form-control" name="jorjet_total_price" placeholder="0" type="text" />
                                                                 </li>
                                                             </ul>
                                                         </td>
