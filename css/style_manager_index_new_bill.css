@@ -28,8 +28,13 @@ input[type=text], input[type=password] {
 
 input[type=c_text]{
   width: 40%;
+  padding-left: 10px;
 }
 
+input[type=dues_text]{
+  width: 60%;
+  padding-left: 10px;
+}
 
 button {
   background-color: #4CAF50;

@@ -49,10 +49,22 @@ if(!empty($_POST)) {
     $jorjetGauge = $_POST['jorjet_gauge'];
     $jorjetPrice = $_POST['jorjet_price'];
     $jorjetTotalPrice = $_POST['jorjet_total_price'];
+
+    $grossPrice = $_POST['gross_price'];
+
 //    echo $Uname;
   //  echo $Pass;
 //    echo $Active;
-    $sql = "INSERT INTO user(username,password,is_active) VALUES  ('$Uname','$Pass','$Active')";
+    if($_POST('is_paid'))
+    {
+        $dueAmount=0;
+        $sql = "INSERT INTO bill_info(gross_total_price,paid_status,due_amount,customer_name) VALUES ('$grossPrice',1,'$dueAmount','$cName')";
+    }
+    else
+    {
+        $dueAmount=$_POST[due_amount];
+        $sql = "INSERT INTO bill_info(gross_total_price,paid_status,due_amount,customer_name) VALUES ('$grossPrice',1,'$dueAmount','$cName')";
+    }
     $q = mysqli_query($con,$sql);
 
     if ($q) {
@@ -144,6 +156,21 @@ if(!empty($_POST)) {
                                                     <div class="col-sm-4">
                                                         <ul>
                                                             <li>
+                                                                <label <b>বিল নং</b></label>
+                                                                <?php
+                                                               // session_start();
+                                                                $con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
+
+                                                                $result= mysqli_query($con,"SELECT MAX(bill_no) AS maximum FROM bill_info");
+
+                                                                $row = mysqli_fetch_assoc($result);
+
+                                                                $maximum = $row['maximum'];
+
+                                                                echo (" $maximum");
+                                                                ?>
+                                                            </li>
+                                                            <li>
                                                                 <label for="customerid" class="required"><b>কাস্টমার নং</b></label>
                                                                 <input class="form-control" maxlength="255" name="customerid" placeholder="কাস্টমার নং" type="c_text" value="" required/>
                                                             </li>
@@ -191,6 +218,7 @@ if(!empty($_POST)) {
                                                                     <label for="bm_total_price" ><b>টাকা</b></label>
                                                                     <input class="form-control" maxlength="255" name="bm_total_price" placeholder="0" type="text" />
                                                                 </li>
+
                                                             </ul>
                                                         </td>
                                                     </tr>
@@ -317,6 +345,24 @@ if(!empty($_POST)) {
                                                     </tr>
                                                 </table>
                                             </div>
+
+                                            <ul>
+                                                <li>
+                                                    <label for="gross_price" class="required"><b>মোট বিল</b></label>
+                                                    <input class="form-control" maxlength="255" name="gross_price" placeholder="মোট বিল " type="c_text" value="" required/>
+                                                </li>
+                                                <li>
+                                                    <label for="is_paid" class="vCheckboxLabel">বাকি আছে?</label>
+                                                    <input id="is_paid" name="is_paid" onclick="dueInput()" type="checkbox"/>
+                                                </li>
+                                                <li id="dues" style="display:none">
+                                                    <label for="due_amount" ><b> বাকি </b></label>
+                                                    <input class="form-control" maxlength="255" name="due_amount" placeholder="বাকির পরিমাণ" type="dues_text" />
+
+                                                </li>
+
+                                            </ul>
+
                                             </div>
                                         </fieldset>
 
@@ -327,10 +373,6 @@ if(!empty($_POST)) {
                                     <input type="submit" value="Save" class="btn_core btn_core_sm" name="_save"/>
                                 </div>
                             </form>
-
-
-
-
 
                         </div>
                     </div>
@@ -343,3 +385,14 @@ if(!empty($_POST)) {
 </div>
 </body>
 </html>
+<script>
+    function dueInput() {
+        var checkBox = document.getElementById("is_paid");
+        var dues = document.getElementById("dues");
+        if (checkBox.checked == true){
+            dues.style.display = "block";
+        } else {
+            dues.style.display = "none";
+        }
+    }
+</script>
