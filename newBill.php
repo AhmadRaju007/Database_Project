@@ -4,6 +4,9 @@ session_start();
 
 $con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
 
+$result= mysqli_query($con,"SELECT MAX(bill_no) AS maximum FROM bill_info");
+$row = mysqli_fetch_assoc($result);
+$maximum = $row['maximum']+1;
 
 if(!isset($_SESSION['username']))
 {
@@ -16,67 +19,87 @@ if(!empty($_POST)) {
     //session_start();
     $con = mysqli_connect('127.0.0.1:3306', 'root', '', 'login');
     // echo "$uid";
-    echo "This section worked!";
+    //echo "This section worked!";
     $cId = $_POST['customerid'];
     $cName = $_POST['customername'];
 
-    $bmNo = $_POST['bm_piece'];
-    $bmMeter = $_POST['bm_meter'];
-    $bmGauge = $_POST['bm_gauge'];
-    $bmPrice = $_POST['bm_price'];
-    $bmTotalPrice = $_POST['bm_total_price'];
+    if(isset($_POST['bm_total_price'])) {
+        $bmNo = $_POST['bm_piece'];
+        $bmMeter = $_POST['bm_meter'];
+        $bmGauge = $_POST['bm_gauge'];
+        $bmPrice = $_POST['bm_price'];
+        $bmTotalPrice = $_POST['bm_total_price'];
+        $sql = "INSERT INTO bmw(b_no, amount_sold,price, total_price) VALUES ('$maximum',$bmGauge,'$bmPrice','$bmTotalPrice')";
+        $q = mysqli_query($con,$sql);
+    }
+    if(isset($_POST['lx_total_price'])) {
+        $lxNo = $_POST['lx_piece'];
+        $lxMeter = $_POST['lx_meter'];
+        $lxGauge = $_POST['lx_gauge'];
+        $lxPrice = $_POST['lx_price'];
+        $lxTotalPrice = $_POST['lx_total_price'];
+        $sql = "INSERT INTO lx(b_no, amount_sold,price, total_price) VALUES ('$maximum',$lxGauge,'$lxPrice','$lxTotalPrice')";
+        $q = mysqli_query($con,$sql);
+    }
+    if(isset($_POST['diamond_total_price'])) {
 
-    $lxNo = $_POST['lx_piece'];
-    $lxMeter = $_POST['lx_meter'];
-    $lxGauge = $_POST['lx_gauge'];
-    $lxPrice = $_POST['lx_price'];
-    $lxTotalPrice = $_POST['lx_total_price'];
+        $diamondNo = $_POST['diamond_piece'];
+        $diamondMeter = $_POST['diamond_meter'];
+        $diamondGauge = $_POST['diamond_gauge'];
+        $diamondPrice = $_POST['diamond_price'];
+        $diamondTotalPrice = $_POST['diamond_total_price'];
+        $sql = "INSERT INTO diamond(b_no, amount_sold,price, total_price) VALUES ('$maximum',$diamondGauge,'$diamondPrice','$diamondTotalPrice')";
+        $q = mysqli_query($con,$sql);
+    }
+    if(isset($_POST['cherry_total_price'])) {
 
-    $diamondNo = $_POST['diamond_piece'];
-    $diamondMeter = $_POST['diamond_meter'];
-    $diamondGauge = $_POST['diamond_gauge'];
-    $diamondPrice = $_POST['diamond_price'];
-    $diamondTotalPrice = $_POST['diamond_total_price'];
+        $cherryNo = $_POST['cherry_piece'];
+        $cherryMeter = $_POST['cherry_meter'];
+        $cherryGauge = $_POST['cherry_gauge'];
+        $cherryPrice = $_POST['cherry_price'];
+        $cherryTotalPrice = $_POST['cherry_total_price'];
+        $sql = "INSERT INTO cherry(b_no, amount_sold,price, total_price) VALUES ('$maximum',$cherryGauge,'$cherryPrice','$cherryTotalPrice')";
+        $q = mysqli_query($con,$sql);
 
-    $cherryNo = $_POST['cherry_piece'];
-    $cherryMeter = $_POST['cherry_meter'];
-    $cherryGauge = $_POST['cherry_gauge'];
-    $cherryPrice = $_POST['cherry_price'];
-    $cherryTotalPrice = $_POST['cherry_total_price'];
-
+    }
+    if(isset($_POST['jorjet_total_price'])) {
     $jorjetNo = $_POST['jorjet_piece'];
     $jorjetMeter = $_POST['jorjet_meter'];
     $jorjetGauge = $_POST['jorjet_gauge'];
     $jorjetPrice = $_POST['jorjet_price'];
     $jorjetTotalPrice = $_POST['jorjet_total_price'];
+    $sql = "INSERT INTO jorjet(b_no, amount_sold,price, total_price) VALUES ('$maximum',$jorjetGauge,'$jorjetPrice','$jorjetTotalPrice')";
+    $q = mysqli_query($con,$sql);
+
+    }
 
     $grossPrice = $_POST['gross_price'];
 
-//    echo $Uname;
-  //  echo $Pass;
-//    echo $Active;
-    if($_POST('is_paid'))
+    if($_POST['gross_price'])
     {
-        $dueAmount=0;
-        $sql = "INSERT INTO bill_info(gross_total_price,paid_status,due_amount,customer_name) VALUES ('$grossPrice',1,'$dueAmount','$cName')";
+        if($_POST['is_paid']==false)
+        {
+            $dueAmount=0;
+            $stts=1;
+        }
+        else {
+            $dueAmount = $_POST[due_amount];
+            $stts=0;
+        }
+         $sql = "INSERT INTO bill_info(bill_no, gross_total_price, paid_status, due_amount, customer_name) VALUES ('$maximum','$grossPrice','$stts','$dueAmount','$cName')";
+        $q = mysqli_query($con,$sql);
     }
-    else
-    {
-        $dueAmount=$_POST[due_amount];
-        $sql = "INSERT INTO bill_info(gross_total_price,paid_status,due_amount,customer_name) VALUES ('$grossPrice',1,'$dueAmount','$cName')";
-    }
-    $q = mysqli_query($con,$sql);
+
 
     if ($q) {
         echo "Successfully Inserted!";
-        header('location:manager_index.php');
+        header('location:newBill.php');
     } else {
         echo " Unsuccessful! Try Again";
     }
 }
 
-/*
-} */
+
 
 
 ?>
@@ -156,7 +179,7 @@ if(!empty($_POST)) {
                                                     <div class="col-sm-4">
                                                         <ul>
                                                             <li>
-                                                                <label <b>বিল নং</b></label>
+                                                                <label <b>বিল নংঃ </b></label>
                                                                 <?php
                                                                // session_start();
                                                                 $con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
@@ -165,7 +188,7 @@ if(!empty($_POST)) {
 
                                                                 $row = mysqli_fetch_assoc($result);
 
-                                                                $maximum = $row['maximum'];
+                                                                $maximum = $row['maximum']+1;
 
                                                                 echo (" $maximum");
                                                                 ?>
