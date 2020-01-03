@@ -119,7 +119,7 @@ if(!empty($_POST)) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
+    <!--script src="js/bootstrap-select.js"></script-->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
 </head>
 
@@ -222,24 +222,24 @@ if(!empty($_POST)) {
 
                                                                 <li>
 
-                                                                    <input class="form-control" maxlength="255" name="bm_piece" placeholder="নাম্বার" type="text" />
-                                                                    <label for="bm_meter" ><b> টি </b></label>
+                                                                    <input class="form-control" maxlength="255" name="bm_piece" placeholder="টি" type="text" />
+                                                                    <label for="bm_meter" ><b> থান </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bm_meter" placeholder="0" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_meter" id="bm_meter" placeholder="0" type="text" onblur= "getbmgauge()" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bm_gauge" placeholder="0" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_gauge" id= "bm_gauge" placeholder="0" type="text" onblur= "getbmmeter()" size="25" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_price" ><b>দর</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bm_price" placeholder="দর" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_price" id="bm_price" placeholder="দর" type="text" onblur= "getbmtotalprice();gettotalbill();" size="30" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="bm_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" maxlength="255" name="bm_total_price" placeholder="0" type="text" />
+                                                                    <input class="form-control" maxlength="255" name="bm_total_price" placeholder="0" type="text" id="bm_total_price" size="40"  />
                                                                 </li>
 
                                                             </ul>
@@ -254,24 +254,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                  <input class="form-control" maxlength="255" name="lx_piece" placeholder="নাম্বার" type="text" />
-                                                                    <label for="lx_meter" ><b> টি </b></label>
+                                                                  <input class="form-control" maxlength="255" name="lx_piece" placeholder="টি" type="text" />
+                                                                    <label for="lx_meter" ><b> থান </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control" name="lx_meter" placeholder="0" type="text" />
+                                                                    <input class="form-control" name="lx_meter" id="lx_meter" onblur= "getlxgauge()" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control" name="lx_gauge" placeholder="0" type="text" />
+                                                                    <input class="form-control" name="lx_gauge" id="lx_gauge" onblur= "getlxmeter()" placeholder="0" type="text" size="25" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_price" ><b>দর</b></label>
-                                                                    <input class="form-control" name="lx_price" placeholder="দর" type="text"/>
+                                                                    <input class="form-control" name="lx_price" id="lx_price" placeholder="দর" type="text" onblur= "getlxtotalprice();gettotalbill();" size="30"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="lx_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="lx_total_price" placeholder="0" type="text" />
+                                                                    <input class="form-control" name="lx_total_price" placeholder="0" type="text" id="lx_total_price" size="40" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -284,24 +284,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                    <input class="form-control" maxlength="255" name="diamond_piece" placeholder="নাম্বার" type="text" />
-                                                                    <label for="diamond_meter" ><b> টি </b></label>
+                                                                    <input class="form-control" maxlength="255" name="diamond_piece" placeholder="টি" type="text" />
+                                                                    <label for="diamond_meter" ><b> থান </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control"  name="diamond_meter" placeholder="0" type="text" />
+                                                                    <input class="form-control"  name="diamond_meter" id="diamond_meter" onblur= "getdiamondgauge()" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control"  name="diamond_gauge" placeholder="0" type="text" />
+                                                                    <input class="form-control"  name="diamond_gauge" id="diamond_gauge" onblur= "getdiamondmeter()" placeholder="0" type="text" size="25" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_price" ><b>দর</b></label>
-                                                                    <input class="form-control"  name="diamond_price" placeholder="দর" type="text"/>
+                                                                    <input class="form-control"  name="diamond_price" id="diamond_price" placeholder="দর" type="text" onblur= "getdiamondtotalprice();gettotalbill();" size="30"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="diamond_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="diamond_total_price" placeholder="0" type="text" />
+                                                                    <input class="form-control" name="diamond_total_price" placeholder="0" type="text" id="diamond_total_price" size="40" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -314,24 +314,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                    <input class="form-control" maxlength="255" name="cherry_piece" placeholder="নাম্বার" type="text" />
-                                                                    <label for="cherry_meter" ><b> টি </b></label>
+                                                                    <input class="form-control" maxlength="255" name="cherry_piece" placeholder="টি" type="text" />
+                                                                    <label for="cherry_meter" ><b> থান </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control"  name="cherry_meter" placeholder="0" type="text" />
+                                                                    <input class="form-control"  name="cherry_meter" id="cherry_meter" onblur= "getcherrygauge()" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control"  name="cherry_gauge" placeholder="0" type="text" />
+                                                                    <input class="form-control"  name="cherry_gauge" id="cherry_gauge" onblur= "getcherrymeter()" placeholder="0" type="text" size="25" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_price" ><b>দর</b></label>
-                                                                    <input class="form-control"  name="cherry_price" placeholder="দর" type="text"/>
+                                                                    <input class="form-control"  name="cherry_price" id="cherry_price" placeholder="দর" type="text" onblur= "getcherrytotalprice();gettotalbill();" size="30"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="cherry_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="cherry_total_price" placeholder="0" type="text" />
+                                                                    <input class="form-control" name="cherry_total_price" placeholder="0" type="text" id="cherry_total_price" size="40" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -344,24 +344,24 @@ if(!empty($_POST)) {
                                                         <td>
                                                             <ul type="flex">
                                                                 <li>
-                                                                    <input class="form-control" maxlength="255" name="jorjet_piece" placeholder="নাম্বার" type="text" />
-                                                                    <label for="jorjet_meter" ><b> টি </b></label>
+                                                                    <input class="form-control" maxlength="255" name="jorjet_piece" placeholder="টি" type="text" />
+                                                                    <label for="jorjet_meter" ><b> থান </b></label>
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_meter" ><b>মিটার</b></label>
-                                                                    <input class="form-control"  name="jorjet_meter" placeholder="0" type="text" />
+                                                                    <input class="form-control"  name="jorjet_meter" id="jorjet_meter" onblur= "getjorjetgauge()" placeholder="0" type="text" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_gauge" ><b>গজ</b></label>
-                                                                    <input class="form-control"  name="jorjet_gauge" placeholder="0" type="text" />
+                                                                    <input class="form-control"  name="jorjet_gauge" id="jorjet_gauge" onblur= "getjorjetmeter()" placeholder="0" type="text" size="25"/>
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_price" ><b>দর</b></label>
-                                                                    <input class="form-control"  name="jorjet_price" placeholder="দর" type="text"/>
+                                                                    <input class="form-control"  name="jorjet_price" placeholder="দর" type="text" id="jorjet_price" onblur= "getjorjettotalprice();gettotalbill();" size="30" />
                                                                 </li>
                                                                 <li>
                                                                     <label for="jorjet_total_price" ><b>টাকা</b></label>
-                                                                    <input class="form-control" name="jorjet_total_price" placeholder="0" type="text" />
+                                                                    <input class="form-control" name="jorjet_total_price" placeholder="0" type="text" id="jorjet_total_price" size="40" />
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -371,8 +371,8 @@ if(!empty($_POST)) {
 
                                             <ul>
                                                 <li>
-                                                    <label for="gross_price" class="required"><b>মোট বিল</b></label>
-                                                    <input class="form-control" maxlength="255" name="gross_price" placeholder="মোট বিল " type="c_text" value="" required/>
+                                                    <label for="total_bill" class="required"><b>মোট বিল</b></label>
+                                                    <input class="form-control" maxlength="255" name="total_bill" id="total_bill" placeholder="মোট বিল " type="c_text" value="" required size="40"/>
                                                 </li>
                                                 <li>
                                                     <label for="is_paid" class="vCheckboxLabel">বাকি আছে?</label>
@@ -409,6 +409,112 @@ if(!empty($_POST)) {
 </body>
 </html>
 <script>
+	function gettotalbill(){
+		var bm_total_price = document.getElementById("bm_total_price").value;
+		if(bm_total_price=="")
+			bm_total_price=0;
+		var lx_total_price = document.getElementById("lx_total_price").value;
+		if(lx_total_price=="")
+			lx_total_price=0;
+		var diamond_total_price = document.getElementById("diamond_total_price").value;
+		if(diamond_total_price=="")
+			diamond_total_price=0;
+		
+		var cherry_total_price = document.getElementById("cherry_total_price").value;
+		if(cherry_total_price=="")
+			cherry_total_price=0;
+		
+		var jorjet_total_price = document.getElementById("jorjet_total_price").value;
+		if(jorjet_total_price=="")
+			jorjet_total_price=0;
+
+		document.getElementById("total_bill").value= +bm_total_price + +lx_total_price + +diamond_total_price + +cherry_total_price + +jorjet_total_price;
+	}
+	function getbmgauge(){
+		var bm_meter = document.getElementById("bm_meter").value;
+		if(bm_meter!=null){
+			document.getElementById("bm_gauge").value= bm_meter*1.0936;
+		}
+	}
+	function getbmmeter(){
+		var bm_gauge = document.getElementById("bm_gauge").value;
+		if(bm_gauge!=null){
+			document.getElementById("bm_meter").value= bm_gauge/1.0936;
+		}
+	}
+	function getbmtotalprice(){
+		var bm_price = document.getElementById("bm_price").value;
+		var bm_gauge = document.getElementById("bm_gauge").value;
+		document.getElementById("bm_total_price").value= bm_price*bm_gauge;
+	}
+	function getlxgauge(){
+		var lx_meter = document.getElementById("lx_meter").value;
+		if(lx_meter!=null){
+			document.getElementById("lx_gauge").value= lx_meter*1.0936;
+		}
+	}
+	function getlxmeter(){
+		var lx_gauge = document.getElementById("lx_gauge").value;
+		if(lx_gauge!=null){
+			document.getElementById("lx_meter").value= lx_gauge/1.0936;
+		}
+	}
+	function getlxtotalprice(){
+		var lx_price = document.getElementById("lx_price").value;
+		var lx_gauge = document.getElementById("lx_gauge").value;
+		document.getElementById("lx_total_price").value= lx_price*lx_gauge;
+	}
+	function getdiamondgauge(){
+		var diamond_meter = document.getElementById("diamond_meter").value;
+		if(diamond_meter!=null){
+			document.getElementById("diamond_gauge").value= diamond_meter*1.0936;
+		}
+	}
+	function getdiamondmeter(){
+		var diamond_gauge = document.getElementById("diamond_gauge").value;
+		if(diamond_gauge!=null){
+			document.getElementById("diamond_meter").value= diamond_gauge/1.0936;
+		}
+	}
+	function getdiamondtotalprice(){
+		var diamond_price = document.getElementById("diamond_price").value;
+		var diamond_gauge = document.getElementById("diamond_gauge").value;
+		document.getElementById("diamond_total_price").value= diamond_price*diamond_gauge;
+	}
+	function getcherrygauge(){
+		var cherry_meter = document.getElementById("cherry_meter").value;
+		if(cherry_meter!=null){
+			document.getElementById("cherry_gauge").value= cherry_meter*1.0936;
+		}
+	}
+	function getcherrymeter(){
+		var cherry_gauge = document.getElementById("cherry_gauge").value;
+		if(cherry_gauge!=null){
+			document.getElementById("cherry_meter").value= cherry_gauge/1.0936;
+		}
+	}
+	function getcherrytotalprice(){
+		var cherry_price = document.getElementById("cherry_price").value;
+		var cherry_gauge = document.getElementById("cherry_gauge").value;
+		document.getElementById("cherry_total_price").value= cherry_price*cherry_gauge;
+	}
+	function getjorjetgauge(){
+		var jorjet_meter = document.getElementById("jorjet_meter").value;
+		if(jorjet_meter!=null){
+			document.getElementById("jorjet_gauge").value= jorjet_meter*1.0936;
+		}
+	}
+	function getjorjetmeter(){
+		var jorjet_gauge = document.getElementById("jorjet_gauge").value;
+		if(jorjet_gauge!=null){
+			document.getElementById("jorjet_meter").value= jorjet_gauge/1.0936;
+		}
+	}
+	function getjorjettotalprice(){
+		var jorjet_price = document.getElementById("jorjet_price").value;
+		var jorjet_gauge = document.getElementById("jorjet_gauge").value;
+		document.getElementById("jorjet_total_price").value= jorjet_price*jorjet_gauge;
+	}
     function dueInput() {
         var checkBox = document.getElementById("is_paid");
         var dues = document.getElementById("dues");
