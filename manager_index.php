@@ -41,19 +41,10 @@ if(isset($_POST["insert"]))
           <nav>
             <ul >
              <li class="item" id="profile">
-              <a href="#profile" class="btn"><i class="far fa-user"></i>Profile</a>
-              <div class="smenu">
-                <a href="#">Posts</a>
-                <a href="#">Pictures</a>
-              </div>
+              <a href="manager_index.php" class="btn"><i class="far fa-user"></i>আজকের হিসাব</a>
              </li>
               <li class="item" id="messages">
-              <a href="#messages" class="btn"><i class="far fa-envelope-open"></i>Messages</a>
-              <div class="smenu">
-                <a href="#">New</a>
-                <a href="#">Sent</a>
-                <a href="#">Spam</a>
-              </div>
+              <a href="new_product.php" class="btn"><i class="far fa-envelope-open"></i>ক্রয়ের হিসাব</a>
             </li>
             <li class="item" id="settings">
               <a href="#settings" class="btn"><i class="fas fa-cog"></i>Settings</a>
@@ -84,36 +75,32 @@ if(isset($_POST["insert"]))
               <div class="row">
                 <div class="col-md-offset-1 col-md-10">
                     <div class="panel-heading"><h3>আজকের হিসাব </h3></div>
-                      <a  href="addUser.php";><button class="bttn bttn_center">নতুন বিল </button></a>
+                      <a  href="newBill.php";><button class="bttn bttn_center">নতুন বিল </button></a>
                       
                    		<table class= "table table-dark">
                    			<thead>
 	                   			<th> বিল নাম্বার </th>
-	                   			<th> কাস্টমারের নাম</th>
-	                   			<th> কাপড়ের নাম </th>
-	                   			<th> কাপড়ের নাম্বার </th>
-	                   			<th> মিটার </th>
-	                   			<th> গজ </th>
-	                   			<th> দর </th>
+	                   			<th> তারিখ</th>
+                          <th> কাস্টমারের নাম </th>
+                          <th> বাকির পরিমাণ </th>
 	                   			<th> টাকা </th>
-	                   			<th> বাকির পরিমাণ </th>
 	                   		</thead>
 	                   		<tbody>
 	                   			<?php
 	                   				$con = mysqli_connect('127.0.0.1:3306', 'root', '','login');
                                     $cDate = date("Y-m-d");
 
-                                    $sql= "SELECT bill_no, c_date, p_name, p_id, m_units, g_units, unit_price, total_price, due_amount FROM bill_info where c_date LIKE '$cDate%'";// date(\"Y-m-d\")";
+                                    $sql= "SELECT bill_no, c_date, customer_name, due_amount,  gross_total_price FROM bill_info where c_date LIKE '$cDate%'";// date(\"Y-m-d\")";
 
                                     $reslt = mysqli_query ($con,$sql);
-                                    if(isset ($reslt)) {
+                                  //  echo($reslt);
+                                    if($reslt) {
                                         while ($row = mysqli_fetch_array($reslt)) {
                                             if (!$row) {
                                                 printf("Error: %s\n", mysqli_error($con));
                                                 exit();
                                             }
-                                            //echo "<tr><td>". $row["c_date"]."</td></tr>";
-                                           echo "<tr> <td> " . $row["bill_no"] . "</td> <td> " . $row["c_date"] . "</td> <td> " . $row["p_name"] . "</td> <td> " . $row["p_id"] . "</td> <td> " . $row["m_units"] . "</td> <td> " . $row["g_units"] . "</td> <td> " . $row["unit_price"] . "</td> <td> " . $row["total_price"] . "</td> <td> " . $row["due_amount"] . "</td></tr>";
+                                           echo "<tr> <td> " . $row["bill_no"] . "</td> <td> " . $row["c_date"] . "</td> <td> " . $row["customer_name"] . "</td> <td> " . $row["due_amount"] . "</td> <td> " . $row["gross_total_price"] . "</td></tr>";
                                         }
                                     }
                                     else
@@ -150,55 +137,10 @@ if(isset($_POST["insert"]))
     </script>
 
     <script >
-    /*  function ShowUserInfo(){
-        var html = '<table class="table table-bordered showdeliveryreportstable" id = "datatable">' +
-                       
-                        '</table>';
-                    $('.deliveryreportssection').html(html);
-        var dataSet = {};
-        var columns = [{
-            "title": 'Id',
-            "data": "Id"
-        },
-        {
-            "title": 'Username',
-            "data": "Username"
-        },
-        {
-            "title": 'Password',
-            "data": "Password"
-        },
-        ,
-        {
-            "title": 'Action',
-            "data": "Action"
-        }
-    ];
     
-    var table_name = ".showdeliveryreportstable";
-    }*/
   $(document).ready(function(){
      var columns = [
-      /*  {
-            "title": 'Action',
-            "class": "text_center",
-            "data": "areaoragent"
-        },
-       {
-            "title": 'Id',
-            "class": "text_center",
-            "data": "array[0]"
-        },
-        {
-            "title": 'Username',
-            "class": "text_center",
-            "data": "array[1]"
-        },
-        {
-            "title": 'Password',
-            "class": "text_center",
-            "data": "array[2]"
-        },*/
+    
       ];
     $('#post_list').dataTable({
         //"destroy": true,
@@ -212,14 +154,9 @@ if(isset($_POST["insert"]))
             [20, 25, 50, 100, 150, 200, 500, 1000],
             [20, 25, 50, 100, 150, 200, 500, 1000]
         ],
-        //"columns": columns,
-      /*  "order": [
-            [1, "desc"]
-        ], */
         "bFilter": false,
         "columnDefs": [{
           "targets": [0,2,3],"orderable": true,},
-          //{"targets": [1,2,3],"searchable": false},
         ],
         dom: 'Blfrtip',
         buttons:[
@@ -240,6 +177,3 @@ if(isset($_POST["insert"]))
  </body>
 
 </html>
-
-
-

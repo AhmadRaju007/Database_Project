@@ -73,9 +73,20 @@ if(!empty($_POST)) {
 
     }
 
-    $grossPrice = $_POST['gross_price'];
+    if(isset($_POST['nidha_total_price'])) {
+    $nidhaNo = $_POST['nidha_piece'];
+    $nidhaMeter = $_POST['nidha_meter'];
+    $nidhaGauge = $_POST['nidha_gauge'];
+    $nidhaPrice = $_POST['nidha_price'];
+    $nidhaTotalPrice = $_POST['nidha_total_price'];
+    $sql = "INSERT INTO nidha(b_no, amount_sold,price, total_price) VALUES ('$maximum',$nidhaGauge,'$nidhaPrice','$nidhaTotalPrice')";
+    $q = mysqli_query($con,$sql);
 
-    if($_POST['gross_price'])
+    }
+
+    $grossPrice = $_POST['total_bill'];
+
+    if($_POST['total_bill'])
     {
         if($_POST['is_paid']==false)
         {
@@ -130,19 +141,11 @@ if(!empty($_POST)) {
             <nav>
                 <ul>
                     <li class="item" id="profile">
-                        <a href="#profile" class="btn"><i class="far fa-user"></i>Profile</a>
-                        <div class="smenu">
-                            <a href="#">Posts</a>
-                            <a href="#">Pictures</a>
-                        </div>
+                        <a href="manager_index.php" class="btn"><i class="far fa-user"></i>আজকের হিসাব</a>
+                        
                     </li>
                     <li class="item" id="messages">
-                        <a href="#messages" class="btn"><i class="far fa-envelope-open"></i>Messages</a>
-                        <div class="smenu">
-                            <a href="#">New</a>
-                            <a href="#">Sent</a>
-                            <a href="#">Spam</a>
-                        </div>
+                        <a href="new_product.php" class="btn"><i class="far fa-envelope-open"></i>ক্রয়ের হিসাব</a>
                     </li>
                     <li class="item" id="settings">
                         <a href="#settings" class="btn"><i class="fas fa-cog"></i>Settings</a>
@@ -366,6 +369,36 @@ if(!empty($_POST)) {
                                                             </ul>
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                        <td>
+
+                                                            <label for="jorjet_piece" ><b> নিধা  </b></label>
+                                                        </td>
+                                                        <td>
+                                                            <ul type="flex">
+                                                                <li>
+                                                                    <input class="form-control" maxlength="255" name="nidha_piece" placeholder="টি" type="text" />
+                                                                    <label for="nidha_meter" ><b> থান </b></label>
+                                                                </li>
+                                                                <li>
+                                                                    <label for="nidha_meter" ><b>মিটার</b></label>
+                                                                    <input class="form-control"  name="nidha_meter" id="nidha_meter" onblur= "getnidhagauge()" placeholder="0" type="text" />
+                                                                </li>
+                                                                <li>
+                                                                    <label for="nidha_gauge" ><b>গজ</b></label>
+                                                                    <input class="form-control"  name="nidha_gauge" id="nidha_gauge" onblur= "getnidhameter()" placeholder="0" type="text" size="25"/>
+                                                                </li>
+                                                                <li>
+                                                                    <label for="nidha_price" ><b>দর</b></label>
+                                                                    <input class="form-control"  name="nidha_price" placeholder="দর" type="text" id="nidha_price" onblur= "getnidhatotalprice();gettotalbill();" size="30" />
+                                                                </li>
+                                                                <li>
+                                                                    <label for="nidha_total_price" ><b>টাকা</b></label>
+                                                                    <input class="form-control" name="nidha_total_price" placeholder="0" type="text" id="nidha_total_price" size="40" />
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
                                                 </table>
                                             </div>
 
@@ -428,7 +461,11 @@ if(!empty($_POST)) {
 		if(jorjet_total_price=="")
 			jorjet_total_price=0;
 
-		document.getElementById("total_bill").value= +bm_total_price + +lx_total_price + +diamond_total_price + +cherry_total_price + +jorjet_total_price;
+		var nidha_total_price = document.getElementById("nidha_total_price").value;
+		if(nidha_total_price=="")
+			nidha_total_price=0;
+
+		document.getElementById("total_bill").value= +bm_total_price + +lx_total_price + +diamond_total_price + +cherry_total_price + +jorjet_total_price+ +nidha_total_price;
 	}
 	function getbmgauge(){
 		var bm_meter = document.getElementById("bm_meter").value;
@@ -514,6 +551,23 @@ if(!empty($_POST)) {
 		var jorjet_price = document.getElementById("jorjet_price").value;
 		var jorjet_gauge = document.getElementById("jorjet_gauge").value;
 		document.getElementById("jorjet_total_price").value= jorjet_price*jorjet_gauge;
+	}
+	function getnidhagauge(){
+		var nidha_meter = document.getElementById("nidha_meter").value;
+		if(nidha_meter!=null){
+			document.getElementById("nidha_gauge").value= nidha_meter*1.0936;
+		}
+	}
+	function getnidhameter(){
+		var nidha_gauge = document.getElementById("nidha_gauge").value;
+		if(nidha_gauge!=null){
+			document.getElementById("nidha_meter").value= nidha_gauge/1.0936;
+		}
+	}
+	function getnidhatotalprice(){
+		var nidha_price = document.getElementById("nidha_price").value;
+		var nidha_gauge = document.getElementById("nidha_gauge").value;
+		document.getElementById("nidha_total_price").value= nidha_price*nidha_gauge;
 	}
     function dueInput() {
         var checkBox = document.getElementById("is_paid");
